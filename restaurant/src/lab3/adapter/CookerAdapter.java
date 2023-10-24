@@ -15,7 +15,7 @@ public class CookerAdapter implements BarmenObligations {
     }
 
     @Override
-    public int showFinalSalary() {
+    public int showCocktailPrice() {
         return cooker.finalSalary();
     }
 }

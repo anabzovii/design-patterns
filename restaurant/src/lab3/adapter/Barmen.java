@@ -1,13 +1,13 @@
 package lab3.adapter;
 
-import lab3.bridge.CocktailType;
+import lab3.flyweight.Cocktail;
 
 public class Barmen implements BarmenObligations {
-    private CocktailType cocktailType;
+    private Cocktail cocktail;
     private int salary;
 
-    public Barmen(CocktailType cocktailType, int salary) {
-        this.cocktailType = cocktailType;
+    public Barmen(Cocktail cocktail, int salary) {
+        this.cocktail = cocktail;
         this.salary = salary;
     }
 
@@ -17,7 +17,7 @@ public class Barmen implements BarmenObligations {
     }
 
     @Override
-    public int showFinalSalary() {
-        return salary + cocktailType.additionPrice();
+    public int showCocktailPrice() {
+        return salary;
     }
 }

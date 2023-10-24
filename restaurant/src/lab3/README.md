@@ -27,9 +27,9 @@
 
 * Introduction
 
-I implemented Adapter, Bridge, Composite and Decorator design patterns.
+I implemented Adapter, Flyweight, Composite and Decorator design patterns.
 In the program we have a cooker and barmen. Both of them have their out possibilities to create meat or vegetarian salads.
-Or, neither alcoholic or nonalcoholic cocktails.
+Or, neither alcoholic cocktails.
 
 * Snippets from your files.
 
@@ -56,19 +56,26 @@ public class CookerAdapter implements BarmenObligations {
 }
 ```
 
-* Bridge:
+* Flyweight:
 
-Bridge allows to create objects of different types that have at the same time different characteristics. It gives us a 
-bigger object variety.
+Flyweight design pattern is used when we need to create a lot of Objects of a class.
 ```java
-public abstract class CocktailType {
-    protected Cocktail cocktail;
+public class Cocktail implements Preparation {
+    private String name;
+    private int price;
 
-    public CocktailType(Cocktail cocktail){
-        this.cocktail = cocktail;
+    public Cocktail(String name){
+        this.name = name;
     }
 
-    abstract public int additionPrice();
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    @Override
+    public void prepare() {
+        System.out.println("Cocktail: Preparation() [Name : " + name + ", price :" + price);
+    }
 }
 ```
 
@@ -132,6 +139,4 @@ public class CookerDecorator implements Cooker {
 ```
 
 ## Conclusion
-At this laboratory I implemented 4 lab3 design patterns. They are integrated in each other. I learned information about 
-each of them. Structural design patterns is about defining the structure of classes in such a wat that they can execute
-the necessary problem.
+In this lab, I applied four lab3 design patterns that are interconnected. Through this process, I gained insights into each of them. Structural design patterns focus on outlining the class structure in a way that enables them to effectively address the underlying issues.

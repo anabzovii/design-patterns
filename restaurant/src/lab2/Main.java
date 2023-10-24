@@ -12,6 +12,7 @@ public class Main {
     public static void main(String[] args) {
         //Singleton
         Restaurant restaurant = Restaurant.getInstance();
+
         restaurant.setName("COTLETCA");
         Restaurant restaurant1 = Restaurant.getInstance();
         System.out.println("Restaurant name is " + restaurant.getName());
