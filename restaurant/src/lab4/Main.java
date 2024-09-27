@@ -23,7 +23,7 @@ public class Main {
 
         shoppingMenu.addFood(food1);
         shoppingMenu.addFood(food2);
-        shoppingMenu.pay(new PaypalStrategy("email@example.com", "fdsfb"));
+        shoppingMenu.pay(new PaypalStrategy("email@eple.com", "fdsfb"));
         shoppingMenu.pay(new CreditCardStrategy("Jack Huster", "5535", "786", "12/15"));
 
         //Iterator
